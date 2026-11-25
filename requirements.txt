@@ -1,0 +1,21 @@
+# Laufzeit-Abhängigkeiten des CV-Analyzers.
+# Installiert mit:  pip install -r requirements.txt
+numpy>=1.24
+scipy>=1.10
+pandas>=1.5
+matplotlib>=3.7
+openpyxl>=3.1
+pandastable>=0.13
+joblib>=1.2
+cmcrameri>=1.8
+
+# pygmo wird nur für den Peakfit gebraucht und ist hier absichtlich
+# auskommentiert: Für Windows gibt es keine PyPI-Wheels, und das sdist lässt
+# sich nicht mit pip bauen — `pip install -r requirements.txt` würde dort
+# also immer abbrechen. Der Analyzer startet ohne pygmo, nur der Peakfit
+# bleibt gesperrt.
+#
+#   Linux:         pip install pygmo
+#   Windows/macOS: conda install -c conda-forge pygmo
+#
+# pygmo>=2.19

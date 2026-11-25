@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software in published work, please cite it as below."
+title: "CV-Analyzer"
+abstract: "Desktop tool for evaluating cyclic voltammetry measurement series: import, smoothing, integration, peak fitting and Excel export."
+type: software
+authors:
+  - family-names: "Schottenbauer"
+    given-names: "Josef"
+    orcid: "https://orcid.org/0000-0002-2379-8276"
+version: "2.0"
+date-released: "2026-11-20"
+license: GPL-3.0-or-later
+repository-code: "https://github.com/Schotte92/CV-Analyzer"
+doi: "10.5281/zenodo.24531543"
+url: "https://doi.org/10.5281/zenodo.24531543"
+keywords:
+  - cyclic voltammetry
+  - electrochemistry
+  - peak fitting
+  - data analysis

@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cv-analyzer"
+dynamic = ["version"]
+description = "Desktop tool for evaluating cyclic voltammetry measurement series"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE"]
+authors = [{ name = "Josef Schottenbauer" }]
+keywords = ["cyclic voltammetry", "electrochemistry", "peak fitting", "data analysis"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Environment :: X11 Applications",
+    "Topic :: Scientific/Engineering :: Chemistry",
+]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "pandas>=1.5",
+    "matplotlib>=3.7",
+    "openpyxl>=3.1",
+    "pandastable>=0.13",
+    "joblib>=1.2",
+    "cmcrameri>=1.8",
+    # pygmo only for the peak fitting. It is limited to Linux because PyPI
+    # has no wheels for Windows or macOS, and its source distribution does not
+    # build with pip. There it has to come from conda-forge; without it the
+    # program still starts and only the fit is locked.
+    "pygmo>=2.19; sys_platform == 'linux'",
+]
+
+[project.optional-dependencies]
+# For installing pygmo explicitly, e.g. where the marker above skips it.
+pso = ["pygmo>=2.19"]
+
+[project.scripts]
+cv-analyzer = "cv_analyzer.main:run"
+
+[project.urls]
+Homepage = "https://github.com/Schotte92/CV-Analyzer"
+Source = "https://github.com/Schotte92/CV-Analyzer"
+
+[tool.setuptools]
+packages = ["cv_analyzer"]
+
+[tool.setuptools.package-data]
+cv_analyzer = ["Icon.png"]
+
+[tool.setuptools.dynamic]
+version = { attr = "cv_analyzer.version.__version__" }

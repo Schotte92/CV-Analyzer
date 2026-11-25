@@ -1,0 +1,29 @@
+{
+  "title": "CV-Analyzer: desktop tool for evaluating cyclic voltammetry measurement series",
+  "description": "<p>CV-Analyzer is a desktop tool for the evaluation of cyclic voltammetry (CV) measurement series: import of PalmSens (CSV and XLSX), Stanford Research Systems (SRS) and Raspberry Pi data as well as numpy arrays, splitting into cycles, Savitzky&ndash;Golay smoothing, point reduction by interpolation, potential correction against a reference electrode, integration of a potential window, peak fitting with Gaussian, Lorentz, Voigt and exponentially modified Gaussian shapes using particle swarm optimisation, and export of all results to Excel.</p><p>CV-Analyzer was written for the electrode characterisation work behind the publication &ldquo;Voltammetric pH Determination and Water Quality Screening&mdash;A Novel Method Based on Iridium Dioxide Electrodes&rdquo; and is the program required to open the <code>.cvproj</code> project files of the accompanying data set. It is not tied to a specific electrode system.</p><p>Requires Python 3.10 or newer; the peak fitting needs pygmo (PyPI on Linux, conda-forge on Windows and macOS). The user interface is in German. Project files use joblib/pickle serialization; the loader validates their content before unpickling, see the security note in the README.</p>",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "GPL-3.0-or-later",
+  "version": "2.0",
+  "publication_date": "2026-11-25",
+  "language": "eng",
+  "creators": [
+    {
+      "name": "Schottenbauer, Josef",
+      "affiliation": "University of Applied Sciences Amberg-Weiden (OTH), Amberg, Germany",
+      "orcid": "0000-0002-2379-8276"
+    }
+  ],
+  "keywords": [
+    "cyclic voltammetry",
+    "electrochemistry",
+    "peak fitting",
+    "data analysis",
+    "palmsens",
+    "potentiostat",
+    "iridium oxide",
+    "pH sensor",
+    "python"
+  ],
+  "notes": "GPL-3.0-or-later, required because the table widgets are built with pandastable (GPL-3.0). Dependency licences are listed in THIRD_PARTY.md. The repository contains example measurements in Testdaten/ that are not needed for running the program."
+}
